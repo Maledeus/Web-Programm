@@ -1,0 +1,5 @@
+RabbitMQ
+https://www.erlang-solutions.com/landings/rabbitmq-experts/?utm_source=google&utm_medium=cpc&utm_campaign=&utm_content=&gclid=EAIaIQobChMI-oz386Dn9wIVWfhRCh2x1QicEAAYASAAEgI2fPD_BwE
+
+Bootstrap
+https://getbootstrap.com/docs/5.0/getting-started/introduction/

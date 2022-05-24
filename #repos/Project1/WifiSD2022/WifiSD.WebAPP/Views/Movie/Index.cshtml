@@ -1,0 +1,78 @@
+﻿
+
+
+@model IEnumerable<WifiSD.Core.Application.Results.MovieDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @BasicRes.Genre
+            </th>
+            <th>
+                @BasicRes.MediumType
+                @* @Html.DisplayNameFor(model => model.MediumType) *@
+            </th>
+            <th>
+               @BasicRes.Rating
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @if(Model.Count() == 0)
+        {
+            <tr>
+            <td class="alert-warning" colspan"7">Keine Daten gefunden</td>            
+            </tr>
+        }
+       
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreName)
+            </td>
+            <td>
+                @(item.MediumTypeName + " (" + item.MediumTypeCode + ")")
+            </td>
+            <td>
+                @item.LocalizedRating
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@BasicRes.Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@BasicRes.Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
