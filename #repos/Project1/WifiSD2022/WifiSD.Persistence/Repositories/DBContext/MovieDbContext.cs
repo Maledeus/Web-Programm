@@ -83,7 +83,7 @@ namespace WifiSD.Persistence.Repositories.DBContext
             modelBuilder.Entity<MediumType>().HasData(
 
                 new MediumType { Code = "DVD", Name = "Digital Versitale Disc"},
-                new MediumType { Code = "Br", Name = "Blue Ray"},
+                new MediumType { Code = "BR", Name = "Blue Ray"},
                 new MediumType { Code = "BR-3D", Name = "Blue Ray 3D"},
                 new MediumType { Code = "BR-HDR", Name = "Blue Ray High Definition Res."},
                 new MediumType { Code = "VHS", Name = "VHS"}

@@ -10,7 +10,7 @@ namespace WifiSD.Persistence.Migrations
             migrationBuilder.DeleteData(
                 table: "MediumTypes",
                 keyColumn: "Code",
-                keyValue: "Br");
+                keyValue: "BR");
 
             migrationBuilder.UpdateData(
                 table: "Genres",
@@ -49,7 +49,7 @@ namespace WifiSD.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MediumTypes",
                 columns: new[] { "Code", "Name" },
-                values: new object[] { "Br", "Blue Ray" });
+                values: new object[] { "BR", "Blue Ray" });
         }
     }
 }
