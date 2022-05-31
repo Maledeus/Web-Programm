@@ -18,7 +18,9 @@ namespace WifiSD.Application.Movies
 {
     [MappServiceDependency(nameof(MovieQueryHandler))]
     public class MovieQueryHandler : IRequestHandler<GetMovieDtosQuery, IEnumerable<MovieDto>>,
-                                     IRequestHandler<GetMovieDtoQuery, MovieDto>
+                                     IRequestHandler<GetMovieDtoQuery, MovieDto>,
+                                     IRequestHandler<GetGenresQuery, IEnumerable<Genre>>,
+                                     IRequestHandler<GetMediumTypesQuery, IEnumerable<MediumType>>
     {
         private readonly IMovieRepository movieRepository;
 
@@ -81,7 +83,19 @@ namespace WifiSD.Application.Movies
             
         }
 
-        
+        public async Task<IEnumerable<Genre>> Handle(GetGenresQuery query, CancellationToken cancellationToken)
+        {
+            var result = await this.movieRepository.QueryFrom<Genre>().ToListAsync(cancellationToken);
+            return result;
+        }
+
+        public async Task<IEnumerable<MediumType>> Handle(GetMediumTypesQuery query, CancellationToken cancellationToken)
+        {
+            var result = await this.movieRepository.QueryFrom<MediumType>().ToListAsync(cancellationToken);
+            return result;
+        }
+
+
     }
 
     

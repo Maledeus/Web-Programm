@@ -10,8 +10,8 @@ using WifiSD.Persistence.Repositories.DBContext;
 namespace WifiSD.Persistence.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20220426165254_Set_MediumType_Null")]
-    partial class Set_MediumType_Null
+    [Migration("20220531160858_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace WifiSD.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Dramaqueen"
+                            Name = "Drama"
                         },
                         new
                         {
@@ -86,7 +86,7 @@ namespace WifiSD.Persistence.Migrations
                         },
                         new
                         {
-                            Code = "Br",
+                            Code = "BR",
                             Name = "Blue Ray"
                         },
                         new
@@ -149,7 +149,7 @@ namespace WifiSD.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("63060820-09d0-462a-9c79-33fe570a6c4a"),
+                            Id = new Guid("0f3924ae-4753-4337-9a6b-fb597b5d85c7"),
                             GenreId = 4,
                             MediumTypeCode = "BR",
                             Name = "Schlimmer gehts immer",
@@ -159,17 +159,17 @@ namespace WifiSD.Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2e5e7441-e295-48f7-ba50-a7cb0f41cf18"),
+                            Id = new Guid("1bd83417-f42a-411d-a2fb-d35c85f5b8dc"),
                             GenreId = 1,
                             MediumTypeCode = "DVD",
                             Name = "Stirb langsam",
                             Price = 7.90m,
-                            Rating = (byte)0,
+                            Rating = (byte)1,
                             ReleaseDate = new DateTime(1988, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("ce10e516-a7b4-4763-a617-a3938c2e99db"),
+                            Id = new Guid("0ee99d8e-26ff-40c4-80ef-3b30ab60ee29"),
                             GenreId = 3,
                             MediumTypeCode = "BR-3D",
                             Name = "Titanic",

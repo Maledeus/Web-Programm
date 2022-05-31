@@ -91,9 +91,9 @@ namespace WifiSD.Persistence.Repositories.DBContext
 
             modelBuilder.Entity<Movie>().HasData(
 
-                new Movie { Id = new Guid("63060820-09D0-462A-9C79-33FE570A6C4A"), GenreId = 4, Name = "Schlimmer gehts immer", Price = 20.99m, MediumTypeCode = "BR", ReleaseDate = new DateTime(2017, 9, 14), Rating = Ratings.Great },
-                new Movie { Id = new Guid("2E5E7441-E295-48F7-BA50-A7CB0F41CF18"), GenreId = 1, Name = "Stirb langsam", Price = 7.90m, MediumTypeCode = "DVD", ReleaseDate = new DateTime(1988, 11, 11), Rating = Ratings.Unrated },
-                new Movie { Id = new Guid("CE10E516-A7B4-4763-A617-A3938C2E99DB"), GenreId = 3, Name = "Titanic", Price = 9.90m, MediumTypeCode = "BR-3D", ReleaseDate = new DateTime(1994, 10, 14), Rating = Ratings.Medium }
+                new Movie { Id = new Guid("0F3924AE-4753-4337-9A6B-FB597B5D85C7"), GenreId = 4, Name = "Schlimmer gehts immer", Price = 20.99m, MediumTypeCode = "BR", ReleaseDate = new DateTime(2017, 9, 14), Rating = Ratings.Great },
+                new Movie { Id = new Guid("1BD83417-F42A-411D-A2FB-D35C85F5B8DC"), GenreId = 1, Name = "Stirb langsam", Price = 7.90m, MediumTypeCode = "DVD", ReleaseDate = new DateTime(1988, 11, 11), Rating = Ratings.Bad },
+                new Movie { Id = new Guid("0EE99D8E-26FF-40C4-80EF-3B30AB60EE29"), GenreId = 3, Name = "Titanic", Price = 9.90m, MediumTypeCode = "BR-3D", ReleaseDate = new DateTime(1994, 10, 14), Rating = Ratings.Medium }
 
                 );
 

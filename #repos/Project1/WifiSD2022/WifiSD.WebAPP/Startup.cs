@@ -21,6 +21,7 @@ using WifiSD.Resources;
 using WifiSD.Resources.Attributes;
 using WifiSD.WebAPP.Data;
 using Microsoft.AspNetCore.Mvc.Razor;
+using System;
 
 namespace WifiSD.WebAPP
 {
@@ -69,6 +70,12 @@ namespace WifiSD.WebAPP
             // MediatR inkl. Handler registrieren
             services.AddMediatR(typeof(MovieQueryHandler).GetTypeInfo().Assembly);
 
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -102,6 +109,9 @@ namespace WifiSD.WebAPP
             /* Browser-Sprach-Erkennung aktivieren */
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
+
+            /* Notwendig, um Session Variablen verwenden zu können*/
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
